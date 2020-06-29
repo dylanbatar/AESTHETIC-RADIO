@@ -1,0 +1,193 @@
+:root {
+  --bg-dark: #212121;
+  --bg-opacity: #000000ab;
+  --font-blue: #68fdf7;
+  --font-grey: #d2ccb7;
+  --font-color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--font-color);
+  font-family: "Press Start 2P", cursive;
+  height: 100vh;
+}
+
+main {
+  text-align: center;
+  overflow: hidden;
+}
+
+main h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+main img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.reproductor {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  bottom: 0;
+  height: 110px;
+  width: 100%;
+  background-color: var(--bg-opacity);
+  font-size: 10px;
+}
+
+.controls {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.reproductor i {
+  font-size: 40px;
+}
+
+i {
+  display: none !important;
+}
+
+i.active {
+  display: inline-block !important;
+}
+
+.chat {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: var(--bg-opacity);
+  width: 400px;
+  transition: 0.3s;
+}
+
+.active {
+  right: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 20px 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li .texto {
+  padding: 10px 10px;
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.sidebarbtn {
+  position: absolute;
+  right: 400px;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  background: var(--bg-opacity);
+  color: var(--font-color);
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  bottom: 30vh;
+  top: 30vh;
+}
+
+.toggle {
+  right: -400px;
+}
+
+.chat {
+  height: calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chat span {
+  display: block;
+  height: 3px;
+  width: 35px;
+  position: absolute;
+  top: 24px;
+  transition: 0.3s;
+}
+
+.chat span:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transition: 0.3s;
+}
+
+.chat span:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transition: 0.3s;
+}
+
+.message-list{
+	overflow: auto;
+}
+
+.message-list .message-user {
+  color: var(--font-blue);
+  font-size: 11px;
+  text-align: left !important;
+}
+
+.message-list .message {
+  font-family: "Open Sans", cursive !important;
+  color: var(--font-grey);
+  font-size: 15px;
+  text-align: left !important;
+}
+
+.type-box {
+  display: block;
+  width: 100%;
+}
+
+.type-box input {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.command-tools {
+  text-align: left;
+  font-style: italic;
+  font-family: "Open Sans", cursive;
+  color: var(--font-grey);
+  font-size: 12px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}

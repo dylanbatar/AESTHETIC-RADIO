@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aesthetic radio 📻 ⺭</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/icons/webfonts/all.min.css" />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <h3>Aesthetic radio</h3>
+      <img
+        id="background"
+        src="https://media.giphy.com/media/KZFrf9JusXzmpnPsT6/giphy.gif"
+        alt=""
+      />
+      <div class="chat" id="message-box">
+        <ul class="message-list">
+          <li>
+            <div class="texto">
+              <h4 class="message-user">Yuliet</h4>
+              <p class="message">Hola amigos que tal</p>
+            </div>
+          </li>
+          <li>
+            <div class="texto">
+              <h4 class="message-user">Yuliet</h4>
+              <p class="message">Hola amigos que tal</p>
+            </div>
+          </li>
+        </ul>
+        <div class="type-box">
+          <input
+            type="text"
+            id="message-input"
+            placeholder="type any message"
+          />
+        </div>
+        <button id="message-toggle" class="sidebarbtn">
+          <i class="fas fa-arrow-right active"></i>
+        </button>
+      </div>
+      <div class="reproductor">
+        <div class="song-info">
+          <h4 class="song-artist">
+            ILLITERATE
+          </h4>
+          <p class="song-name">TRUE HALLUCINATIONS</p>
+        </div>
+        <div class="listeners">
+          <h4>LISTERNERS:2000</h4>
+        </div>
+        <div class="controls">
+          <i id="pause" class="fas fa-pause active"></i>
+          <i id="play" class="fas fa-play"></i>
+          <input type="range" name="" id="slider" class="slider" />
+          <i id="fullscreen" class="fas fa-expand active"></i>
+        </div>
+      </div>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/sidebar.js"></script>
+    <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/commandSystem.js"></script>
+    <script type="module" src="./js/chat.js"></script>
+  </body>
+</html>
