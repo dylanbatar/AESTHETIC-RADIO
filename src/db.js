@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+require("./config/config");
 
 mongoose
-  .connect("mongodb://localhost:27017/radio", {
+  .connect(process.env.URI_DB, {
     useCreateIndex: true,
     useUnifiedTopology: true,
     useNewUrlParser: true,

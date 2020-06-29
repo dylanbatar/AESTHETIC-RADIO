@@ -3,8 +3,11 @@ const app = express();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
+// config
+require("./config/config");
+
 // db
-require('./db')
+require("./db");
 
 // server config
 app.use(express.json());
@@ -29,6 +32,6 @@ io.on("connection", (client) => {
 app.use(require("./routes/index.routes"));
 
 // running server
-http.listen(4200, () => {
+http.listen(process.env.PORT, () => {
   console.log("Server is running");
 });

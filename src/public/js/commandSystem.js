@@ -50,7 +50,7 @@ const registerCommand = async (nickname, email, password) => {
     return;
   }
 
-  const state = fetchApi("http://localhost:4200/signup", "POST", {
+  const state = fetchApi(" https://aesthetic-radio.herokuapp.com/signup", "POST", {
     nickname,
     email,
     password,
@@ -60,7 +60,7 @@ const registerCommand = async (nickname, email, password) => {
 };
 
 const loginCommand = async (email, password) => {
-  const state = await fetchApi("http://localhost:4200/signin", "POST", {
+  const state = await fetchApi(" https://aesthetic-radio.herokuapp.com/signin", "POST", {
     email,
     password,
   });
