@@ -6,7 +6,9 @@ const { json } = require("express");
 router.post("/signup", (req, res) => {
   const { nickname, email, password } = req.body;
 
-  console.log(req.body)
+  if (nickname == undefined || email == undefined || password == undefined) {
+    return res.json({ ok: false, data: [], message: "Missing arguments" });
+  }
 
   let passwordHash = bcrypt.hashSync(password, 10);
 
