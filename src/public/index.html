@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./faviicon.png" type="image/png" />
 
-
     <title>Aesthetic radio 📻 ⺭</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Press+Start+2P&display=swap"
@@ -49,10 +48,13 @@
           <div class="message-prompt">
             <div class="message-terminal-icons">
               <i class="fas fa-angle-right active"></i>
-              <span class="prompt-letter"></span>
             </div>
 
-            <input type="text" id="message-input" placeholder="asda" />
+            <input
+              type="text"
+              id="message-input"
+              placeholder="type /help to see all commands"
+            />
           </div>
         </div>
         <button id="message-toggle" class="sidebarbtn">
@@ -67,7 +69,7 @@
           <p class="song-name">TRUE HALLUCINATIONS</p>
         </div>
         <div class="listeners">
-          <h4>LISTERNERS:2000</h4>
+          <h4>LISTERNERS:<span id="online-users">1</span></h4>
         </div>
         <div class="controls">
           <i id="pause" class="fas fa-pause active"></i>

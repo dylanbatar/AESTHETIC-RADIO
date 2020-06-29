@@ -4,15 +4,18 @@ import { socket } from "./app.js";
 const messageInput = document.querySelector("#message-input");
 const messageBox = document.querySelector(".message-list");
 
+messageInput.focus();
+
 messageInput.addEventListener("keydown", (e) => {
-  if (e.keyCode === 13) {
+  if (e.keyCode === 13 && messageInput["value"] != "") {
     e.preventDefault();
     showCommand(messageInput["value"]);
+    messageInput["value"] = "";
   }
 });
 
-socket.on("history", ({data}) => {
-  console.log(data)
+socket.on("history", ({ data }) => {
+  console.log(data);
   drawMessage(data.message, data.user);
 });
 

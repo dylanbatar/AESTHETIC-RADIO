@@ -1,4 +1,5 @@
 const express = require("express");
+const { info } = require("console");
 const app = express();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
@@ -15,18 +16,23 @@ app.use(express.static(__dirname + "/public"));
 
 // socket config
 io.on("connection", (client) => {
-  console.log(client.id);
+  client.emit("online-users", onlineUser());
+  client.broadcast.emit("online-users", onlineUser());
 
   client.on("disconnect", () => {
-    console.log("user disconnected", client.id);
+    client.broadcast.emit("online-users", onlineUser());
   });
 
   client.on("send-message", (data) => {
-    console.log(data);
-
     io.emit("history", { data });
   });
 });
+
+const onlineUser = () => {
+  let users = io.sockets.clients();
+  let keys = Object.keys(users.connected);
+  return keys.length;
+};
 
 // routes config
 app.use(require("./routes/index.routes"));

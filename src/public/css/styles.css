@@ -185,7 +185,7 @@ ul li .texto {
 	background-color: unset;
 	outline: none;
 	border: none;
-
+  margin-left: .5rem;
 }
 
 .type-box .message-terminal-route {
