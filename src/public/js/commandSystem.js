@@ -1,12 +1,15 @@
 import { socket } from "./app.js";
 import { fetchApi } from "./fetchApi.js";
-import { isLogger } from './auth.js'
+import { isLogger, signIn } from "./auth.js";
 
 const messageList = document.querySelector(".message-list");
 
-const showCommand = (command = "") => {
-  if (!command.startsWith("/") && isLogger()) {
-    socket.emit("send-message", { message: command });
+const showCommand = (command) => {
+  if (!command.trimLeft().startsWith("/") && isLogger()) {
+    socket.emit("send-message", {
+      message: command,
+      user: sessionStorage.getItem("aesthetic-radio"),
+    });
   }
 
   command = command.split(" ");
@@ -42,25 +45,33 @@ const helpCommand = () => {
   messageList.innerHTML += listCommands;
 };
 
-const registerCommand = (nickname, email, password) => {
+const registerCommand = async (nickname, email, password) => {
+  if (isLogger()) {
+    return;
+  }
+
   const state = fetchApi("http://localhost:4200/signup", "POST", {
     nickname,
     email,
     password,
   });
+
   console.log(state);
 };
 
-const loginCommand = (email, password) => {
-  const state = fetchApi("http://localhost:4200/signin", "POST", {
+const loginCommand = async (email, password) => {
+  const state = await fetchApi("http://localhost:4200/signin", "POST", {
     email,
     password,
   });
+
+  if (state?.ok) signIn(email);
+
   console.log(state);
 };
 
-const giphyCommand = (name) => {
-  const state = fetchApi(
+const giphyCommand = async (name) => {
+  const state = await fetchApi(
     `https://api.giphy.com/v1/gifs/search?q=${encodeURI(
       name
     )}&limit=10&api_key=9WrQsDF07XFRCx7bswdDfC0NI9j79ISM`

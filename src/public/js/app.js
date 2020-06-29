@@ -8,8 +8,4 @@ socket.on("connect", () => {
   console.log("new user conect");
 });
 
-socket.on("history", ({ data }) => {
-  console.log(data.message);
-});
-
 export { socket };

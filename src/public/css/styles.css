@@ -4,6 +4,8 @@
   --font-blue: #68fdf7;
   --font-grey: #d2ccb7;
   --font-color: #fff;
+  --font-dark-blue: #5971ff;
+  --font-red: #ff6e67;
 }
 
 * {
@@ -19,7 +21,7 @@ body {
 }
 
 main {
-  text-align: center;
+  /* text-align: center; */
   overflow: hidden;
 }
 
@@ -126,7 +128,7 @@ ul li .texto {
   justify-content: space-between;
 }
 
-.chat span {
+.chat ul span {
   display: block;
   height: 3px;
   width: 35px;
@@ -135,7 +137,7 @@ ul li .texto {
   transition: 0.3s;
 }
 
-.chat span:before {
+.chat ul span:before {
   content: "";
   position: absolute;
   top: -10px;
@@ -155,8 +157,8 @@ ul li .texto {
   transition: 0.3s;
 }
 
-.message-list{
-	overflow: auto;
+.message-list {
+  overflow: auto;
 }
 
 .message-list .message-user {
@@ -179,7 +181,47 @@ ul li .texto {
 
 .type-box input {
   width: 100%;
-  margin-bottom: 0.5rem;
+	color: var(--font-color);
+	background-color: unset;
+	outline: none;
+	border: none;
+
+}
+
+.type-box .message-terminal-route {
+  font-size: 10px;
+  color: var(--font-blue);
+}
+.type-box .message-terminal-git {
+  font-size: 10px;
+  color: var(--font-dark-blue);
+}
+
+.type-box .message-terminal-branch {
+  color: var(--font-red);
+  font-size: 9px;
+}
+
+.type-box .message-prompt {
+  display: flex;
+}
+
+.type-box .message-terminal-icons {
+  display: flex;
+}
+.type-box .fa-angle-right {
+  color: #adff2f;
+  font-size: 20px;
+  left: 5px;
+}
+
+.type-box .prompt-letter {
+  width: 8px;
+  height: 8px;
+  padding: 0.3rem 0;
+  background-color: var(--font-color);
+  left: 15px;
+  margin: 0.15rem 0.3rem;
 }
 
 .command-tools {
@@ -188,6 +230,6 @@ ul li .texto {
   font-family: "Open Sans", cursive;
   color: var(--font-grey);
   font-size: 12px;
-	margin-left: 10px;
-	margin-bottom: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
