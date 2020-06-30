@@ -2,7 +2,7 @@
 
 Es una radio para programar, estudiar, trabajar o simplemente chatear con la gente que aqui se encuentra 📻
 
-**Nota:** link de la pagina en produccion proximamente
+[a]()
 
 ## COMO INSTALAR 🤔
 
@@ -43,4 +43,14 @@ Este proyecto cuenta con variables de entorno en el archivo `db.js`
     │   └── user.routes.js
     └── server.js
 ```
+
 modificar por la url de su base de datos mongodb y listo 😎
+
+## COMO USAR 📑
+
+lista de comandos para empezar a chatear.
+
+1. `/help` para ver la lista de comandos
+2. `/login` para logearte EJ. `/login ejemplo@gmail.com 123456`
+3. `/register` para registrarte como nuevo usuario `/register user ejemplo@gmail.com 123456`
+4. `/clear` para limpiar la ventana de chat
